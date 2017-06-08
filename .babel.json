@@ -1,0 +1,364 @@
+{
+  "{\"filename\":\"/app/server.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.24.1": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/server.js",
+      "filenameRelative": "/app/server.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "server.js",
+      "sourceFileName": "server.js",
+      "sourceRoot": "/app",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "server"
+    },
+    "ignored": false,
+    "code": "// server.js\n// where your node app starts\n\n// init project\nvar express = require('express');\nvar bodyParser = require('body-parser');\nvar cheerio;\nvar app = express();\n\n// we've started you off with Express, \n// but feel free to use whatever libs or frameworks you'd like through `package.json`.\n\n// http://expressjs.com/en/starter/static-files.html\napp.use(express.static('public'));\n\n// http://expressjs.com/en/starter/basic-routing.html\napp.get(\"/\", function (request, response) {\n  response.sendFile(__dirname + '/views/index.html');\n});\n\napp.get(\"/dreams\", function (request, response) {\n  response.send(dreams);\n});\n\n// could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body\napp.post(\"/dreams\", function (request, response) {\n  dreams.push(request.query.dream);\n  response.sendStatus(200);\n});\n\n// Simple in-memory store for now\nvar dreams = [\"Find and count some sheep\", \"Climb a really tall mountain\", \"Wash the dishes\"];\n\n// listen for requests :)\nvar listener = app.listen(process.env.PORT, function () {\n  console.log('Your app is listening on port ' + listener.address().port);\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci5qcyJdLCJuYW1lcyI6WyJleHByZXNzIiwicmVxdWlyZSIsImJvZHlQYXJzZXIiLCJjaGVlcmlvIiwiYXBwIiwidXNlIiwic3RhdGljIiwiZ2V0IiwicmVxdWVzdCIsInJlc3BvbnNlIiwic2VuZEZpbGUiLCJfX2Rpcm5hbWUiLCJzZW5kIiwiZHJlYW1zIiwicG9zdCIsInB1c2giLCJxdWVyeSIsImRyZWFtIiwic2VuZFN0YXR1cyIsImxpc3RlbmVyIiwibGlzdGVuIiwicHJvY2VzcyIsImVudiIsIlBPUlQiLCJjb25zb2xlIiwibG9nIiwiYWRkcmVzcyIsInBvcnQiXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7O0FBRUE7QUFDQSxJQUFJQSxVQUFVQyxRQUFRLFNBQVIsQ0FBZDtBQUNBLElBQUlDLGFBQWFELFFBQVEsYUFBUixDQUFqQjtBQUNBLElBQUlFLE9BQUo7QUFDQSxJQUFJQyxNQUFNSixTQUFWOztBQUVBO0FBQ0E7O0FBRUE7QUFDQUksSUFBSUMsR0FBSixDQUFRTCxRQUFRTSxNQUFSLENBQWUsUUFBZixDQUFSOztBQUVBO0FBQ0FGLElBQUlHLEdBQUosQ0FBUSxHQUFSLEVBQWEsVUFBVUMsT0FBVixFQUFtQkMsUUFBbkIsRUFBNkI7QUFDeENBLFdBQVNDLFFBQVQsQ0FBa0JDLFlBQVksbUJBQTlCO0FBQ0QsQ0FGRDs7QUFJQVAsSUFBSUcsR0FBSixDQUFRLFNBQVIsRUFBbUIsVUFBVUMsT0FBVixFQUFtQkMsUUFBbkIsRUFBNkI7QUFDOUNBLFdBQVNHLElBQVQsQ0FBY0MsTUFBZDtBQUNELENBRkQ7O0FBSUE7QUFDQVQsSUFBSVUsSUFBSixDQUFTLFNBQVQsRUFBb0IsVUFBVU4sT0FBVixFQUFtQkMsUUFBbkIsRUFBNkI7QUFDL0NJLFNBQU9FLElBQVAsQ0FBWVAsUUFBUVEsS0FBUixDQUFjQyxLQUExQjtBQUNBUixXQUFTUyxVQUFULENBQW9CLEdBQXBCO0FBQ0QsQ0FIRDs7QUFLQTtBQUNBLElBQUlMLFNBQVMsQ0FDWCwyQkFEVyxFQUVYLDhCQUZXLEVBR1gsaUJBSFcsQ0FBYjs7QUFNQTtBQUNBLElBQUlNLFdBQVdmLElBQUlnQixNQUFKLENBQVdDLFFBQVFDLEdBQVIsQ0FBWUMsSUFBdkIsRUFBNkIsWUFBWTtBQUN0REMsVUFBUUMsR0FBUixDQUFZLG1DQUFtQ04sU0FBU08sT0FBVCxHQUFtQkMsSUFBbEU7QUFDRCxDQUZjLENBQWYiLCJmaWxlIjoic2VydmVyLmpzIiwic291cmNlUm9vdCI6Ii9hcHAiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBzZXJ2ZXIuanNcbi8vIHdoZXJlIHlvdXIgbm9kZSBhcHAgc3RhcnRzXG5cbi8vIGluaXQgcHJvamVjdFxudmFyIGV4cHJlc3MgPSByZXF1aXJlKCdleHByZXNzJyk7XG52YXIgYm9keVBhcnNlciA9IHJlcXVpcmUoJ2JvZHktcGFyc2VyJyk7XG52YXIgY2hlZXJpb1xudmFyIGFwcCA9IGV4cHJlc3MoKTtcblxuLy8gd2UndmUgc3RhcnRlZCB5b3Ugb2ZmIHdpdGggRXhwcmVzcywgXG4vLyBidXQgZmVlbCBmcmVlIHRvIHVzZSB3aGF0ZXZlciBsaWJzIG9yIGZyYW1ld29ya3MgeW91J2QgbGlrZSB0aHJvdWdoIGBwYWNrYWdlLmpzb25gLlxuXG4vLyBodHRwOi8vZXhwcmVzc2pzLmNvbS9lbi9zdGFydGVyL3N0YXRpYy1maWxlcy5odG1sXG5hcHAudXNlKGV4cHJlc3Muc3RhdGljKCdwdWJsaWMnKSk7XG5cbi8vIGh0dHA6Ly9leHByZXNzanMuY29tL2VuL3N0YXJ0ZXIvYmFzaWMtcm91dGluZy5odG1sXG5hcHAuZ2V0KFwiL1wiLCBmdW5jdGlvbiAocmVxdWVzdCwgcmVzcG9uc2UpIHtcbiAgcmVzcG9uc2Uuc2VuZEZpbGUoX19kaXJuYW1lICsgJy92aWV3cy9pbmRleC5odG1sJyk7XG59KTtcblxuYXBwLmdldChcIi9kcmVhbXNcIiwgZnVuY3Rpb24gKHJlcXVlc3QsIHJlc3BvbnNlKSB7XG4gIHJlc3BvbnNlLnNlbmQoZHJlYW1zKTtcbn0pO1xuXG4vLyBjb3VsZCBhbHNvIHVzZSB0aGUgUE9TVCBib2R5IGluc3RlYWQgb2YgcXVlcnkgc3RyaW5nOiBodHRwOi8vZXhwcmVzc2pzLmNvbS9lbi9hcGkuaHRtbCNyZXEuYm9keVxuYXBwLnBvc3QoXCIvZHJlYW1zXCIsIGZ1bmN0aW9uIChyZXF1ZXN0LCByZXNwb25zZSkge1xuICBkcmVhbXMucHVzaChyZXF1ZXN0LnF1ZXJ5LmRyZWFtKTtcbiAgcmVzcG9uc2Uuc2VuZFN0YXR1cygyMDApO1xufSk7XG5cbi8vIFNpbXBsZSBpbi1tZW1vcnkgc3RvcmUgZm9yIG5vd1xudmFyIGRyZWFtcyA9IFtcbiAgXCJGaW5kIGFuZCBjb3VudCBzb21lIHNoZWVwXCIsXG4gIFwiQ2xpbWIgYSByZWFsbHkgdGFsbCBtb3VudGFpblwiLFxuICBcIldhc2ggdGhlIGRpc2hlc1wiXG5dO1xuXG4vLyBsaXN0ZW4gZm9yIHJlcXVlc3RzIDopXG52YXIgbGlzdGVuZXIgPSBhcHAubGlzdGVuKHByb2Nlc3MuZW52LlBPUlQsIGZ1bmN0aW9uICgpIHtcbiAgY29uc29sZS5sb2coJ1lvdXIgYXBwIGlzIGxpc3RlbmluZyBvbiBwb3J0ICcgKyBsaXN0ZW5lci5hZGRyZXNzKCkucG9ydCk7XG59KTtcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "server.js"
+      ],
+      "names": [
+        "express",
+        "require",
+        "bodyParser",
+        "cheerio",
+        "app",
+        "use",
+        "static",
+        "get",
+        "request",
+        "response",
+        "sendFile",
+        "__dirname",
+        "send",
+        "dreams",
+        "post",
+        "push",
+        "query",
+        "dream",
+        "sendStatus",
+        "listener",
+        "listen",
+        "process",
+        "env",
+        "PORT",
+        "console",
+        "log",
+        "address",
+        "port"
+      ],
+      "mappings": "AAAA;AACA;;AAEA;AACA,IAAIA,UAAUC,QAAQ,SAAR,CAAd;AACA,IAAIC,aAAaD,QAAQ,aAAR,CAAjB;AACA,IAAIE,OAAJ;AACA,IAAIC,MAAMJ,SAAV;;AAEA;AACA;;AAEA;AACAI,IAAIC,GAAJ,CAAQL,QAAQM,MAAR,CAAe,QAAf,CAAR;;AAEA;AACAF,IAAIG,GAAJ,CAAQ,GAAR,EAAa,UAAUC,OAAV,EAAmBC,QAAnB,EAA6B;AACxCA,WAASC,QAAT,CAAkBC,YAAY,mBAA9B;AACD,CAFD;;AAIAP,IAAIG,GAAJ,CAAQ,SAAR,EAAmB,UAAUC,OAAV,EAAmBC,QAAnB,EAA6B;AAC9CA,WAASG,IAAT,CAAcC,MAAd;AACD,CAFD;;AAIA;AACAT,IAAIU,IAAJ,CAAS,SAAT,EAAoB,UAAUN,OAAV,EAAmBC,QAAnB,EAA6B;AAC/CI,SAAOE,IAAP,CAAYP,QAAQQ,KAAR,CAAcC,KAA1B;AACAR,WAASS,UAAT,CAAoB,GAApB;AACD,CAHD;;AAKA;AACA,IAAIL,SAAS,CACX,2BADW,EAEX,8BAFW,EAGX,iBAHW,CAAb;;AAMA;AACA,IAAIM,WAAWf,IAAIgB,MAAJ,CAAWC,QAAQC,GAAR,CAAYC,IAAvB,EAA6B,YAAY;AACtDC,UAAQC,GAAR,CAAY,mCAAmCN,SAASO,OAAT,GAAmBC,IAAlE;AACD,CAFc,CAAf",
+      "file": "server.js",
+      "sourceRoot": "/app",
+      "sourcesContent": [
+        "// server.js\n// where your node app starts\n\n// init project\nvar express = require('express');\nvar bodyParser = require('body-parser');\nvar cheerio\nvar app = express();\n\n// we've started you off with Express, \n// but feel free to use whatever libs or frameworks you'd like through `package.json`.\n\n// http://expressjs.com/en/starter/static-files.html\napp.use(express.static('public'));\n\n// http://expressjs.com/en/starter/basic-routing.html\napp.get(\"/\", function (request, response) {\n  response.sendFile(__dirname + '/views/index.html');\n});\n\napp.get(\"/dreams\", function (request, response) {\n  response.send(dreams);\n});\n\n// could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body\napp.post(\"/dreams\", function (request, response) {\n  dreams.push(request.query.dream);\n  response.sendStatus(200);\n});\n\n// Simple in-memory store for now\nvar dreams = [\n  \"Find and count some sheep\",\n  \"Climb a really tall mountain\",\n  \"Wash the dishes\"\n];\n\n// listen for requests :)\nvar listener = app.listen(process.env.PORT, function () {\n  console.log('Your app is listening on port ' + listener.address().port);\n});\n"
+      ]
+    },
+    "mtime": 1496881402414
+  },
+  "{\"filename\":\"/app/server.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.24.1": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "body-parser",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "bodyParser"
+              }
+            ]
+          },
+          {
+            "source": "cheerio",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "cheerio"
+              }
+            ]
+          },
+          {
+            "source": "request",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "request"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/server.js",
+      "filenameRelative": "/app/server.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "server.js",
+      "sourceFileName": "server.js",
+      "sourceRoot": "/app",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "server"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _bodyParser = require('body-parser');\n\nvar _bodyParser2 = _interopRequireDefault(_bodyParser);\n\nvar _cheerio = require('cheerio');\n\nvar _cheerio2 = _interopRequireDefault(_cheerio);\n\nvar _request = require('request');\n\nvar _request2 = _interopRequireDefault(_request);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar $;\n\nvar app = (0, _express2.default)();\n\napp.use(_bodyParser2.default.urlencoded({ extended: false }));\n\napp.post('/sms', function (req, responseText) {\n    var textContent = req.body.Body;\n    console.log(req.body);\n\n    var hasContent = textContent != undefined && textContent.length > 0;\n    var tweetRequested = hasContent && textContent[0] == '@';\n    var startPlaying = hasContent && textContent.length > 2 && textContent == 'wnd';\n    var keepPlaying = hasContent && textContent.length > 2 && textContent.substring(0, 4) == 'wnd_';\n\n    var fromPhone = req.body.From;\n\n    if (tweetRequested) {\n        (0, _request2.default)('http://twitter.com/' + req.body.Body, function (err, res, body) {\n            $ = _cheerio2.default.load(body);\n            var firstItem = $('ol.stream-items').children().first();\n            var tweetContent = firstItem.find('.tweet-text').text();\n            responseText.send('<Response><Message>' + tweetContent + '</Message></Response>');\n        });\n    } else if (startPlaying || keepPlaying) {\n        playGame(startPlaying, req, responseText);\n    } else {\n        responseText.send('<Response><Message>' + textContent + '</Message></Response>');\n    }\n});\n\nvar playGame = function playGame(starting, req, responseText) {\n    var command = !starting ? req.body.Body : 'wnd_go';\n\n    (0, _request2.default)('http://twitter.com/' + command, function (err, res, body) {\n        $ = _cheerio2.default.load(body);\n        var firstItem = $('ol.stream-items').children().first();\n        var tweetContent = firstItem.find('.tweet-text').text();\n\n        if (starting) tweetContent = 'Welcome to the adventure. Respond with \"wnd_run\" or \"wnd_hide\" to continue \\n\\n' + tweetContent;\n\n        responseText.send('<Response><Message>' + tweetContent + '</Message></Response>');\n    });\n};\n\nvar listener = app.listen(process.env.PORT, function () {\n    console.log('Your app is listening on port ' + listener.address().port);\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci5qcyJdLCJuYW1lcyI6WyIkIiwiYXBwIiwidXNlIiwidXJsZW5jb2RlZCIsImV4dGVuZGVkIiwicG9zdCIsInJlcSIsInJlc3BvbnNlVGV4dCIsInRleHRDb250ZW50IiwiYm9keSIsIkJvZHkiLCJjb25zb2xlIiwibG9nIiwiaGFzQ29udGVudCIsInVuZGVmaW5lZCIsImxlbmd0aCIsInR3ZWV0UmVxdWVzdGVkIiwic3RhcnRQbGF5aW5nIiwia2VlcFBsYXlpbmciLCJzdWJzdHJpbmciLCJmcm9tUGhvbmUiLCJGcm9tIiwiZXJyIiwicmVzIiwibG9hZCIsImZpcnN0SXRlbSIsImNoaWxkcmVuIiwiZmlyc3QiLCJ0d2VldENvbnRlbnQiLCJmaW5kIiwidGV4dCIsInNlbmQiLCJwbGF5R2FtZSIsInN0YXJ0aW5nIiwiY29tbWFuZCIsImxpc3RlbmVyIiwibGlzdGVuIiwicHJvY2VzcyIsImVudiIsIlBPUlQiLCJhZGRyZXNzIiwicG9ydCJdLCJtYXBwaW5ncyI6Ijs7QUFFQTs7OztBQUNBOzs7O0FBQ0E7Ozs7QUFDQTs7Ozs7O0FBTEEsSUFBSUEsQ0FBSjs7QUFNQSxJQUFJQyxNQUFNLHdCQUFWOztBQUVBQSxJQUFJQyxHQUFKLENBQVEscUJBQVdDLFVBQVgsQ0FBc0IsRUFBQ0MsVUFBVSxLQUFYLEVBQXRCLENBQVI7O0FBRUFILElBQUlJLElBQUosQ0FBUyxNQUFULEVBQWlCLFVBQVNDLEdBQVQsRUFBY0MsWUFBZCxFQUE0QjtBQUMzQyxRQUFJQyxjQUFjRixJQUFJRyxJQUFKLENBQVNDLElBQTNCO0FBQ0FDLFlBQVFDLEdBQVIsQ0FBWU4sSUFBSUcsSUFBaEI7O0FBRUEsUUFBSUksYUFBYUwsZUFBZU0sU0FBZixJQUE0Qk4sWUFBWU8sTUFBWixHQUFxQixDQUFsRTtBQUNBLFFBQUlDLGlCQUFpQkgsY0FBY0wsWUFBWSxDQUFaLEtBQWtCLEdBQXJEO0FBQ0EsUUFBSVMsZUFBZUosY0FBY0wsWUFBWU8sTUFBWixHQUFxQixDQUFuQyxJQUF3Q1AsZUFBZSxLQUExRTtBQUNBLFFBQUlVLGNBQWNMLGNBQWNMLFlBQVlPLE1BQVosR0FBcUIsQ0FBbkMsSUFBd0NQLFlBQVlXLFNBQVosQ0FBc0IsQ0FBdEIsRUFBd0IsQ0FBeEIsS0FBOEIsTUFBeEY7O0FBRUEsUUFBSUMsWUFBWWQsSUFBSUcsSUFBSixDQUFTWSxJQUF6Qjs7QUFFQSxRQUFJTCxjQUFKLEVBQW1CO0FBQ2pCLCtCQUFRLHdCQUF3QlYsSUFBSUcsSUFBSixDQUFTQyxJQUF6QyxFQUErQyxVQUFTWSxHQUFULEVBQWNDLEdBQWQsRUFBbUJkLElBQW5CLEVBQXlCO0FBQ3BFVCxnQkFBSSxrQkFBUXdCLElBQVIsQ0FBYWYsSUFBYixDQUFKO0FBQ0EsZ0JBQUlnQixZQUFZekIsRUFBRSxpQkFBRixFQUFxQjBCLFFBQXJCLEdBQWdDQyxLQUFoQyxFQUFoQjtBQUNBLGdCQUFJQyxlQUFlSCxVQUFVSSxJQUFWLENBQWUsYUFBZixFQUE4QkMsSUFBOUIsRUFBbkI7QUFDQXZCLHlCQUFhd0IsSUFBYixDQUFrQix3QkFBd0JILFlBQXhCLEdBQXVDLHVCQUF6RDtBQUNILFNBTEQ7QUFNRCxLQVBELE1BT08sSUFBSVgsZ0JBQWdCQyxXQUFwQixFQUFnQztBQUNwQ2MsaUJBQVNmLFlBQVQsRUFBdUJYLEdBQXZCLEVBQTRCQyxZQUE1QjtBQUNGLEtBRk0sTUFFQTtBQUNMQSxxQkFBYXdCLElBQWIsQ0FBa0Isd0JBQXdCdkIsV0FBeEIsR0FBc0MsdUJBQXhEO0FBQ0Q7QUFDRixDQXZCRDs7QUF5QkEsSUFBSXdCLFdBQVcsU0FBWEEsUUFBVyxDQUFVQyxRQUFWLEVBQW9CM0IsR0FBcEIsRUFBeUJDLFlBQXpCLEVBQXVDO0FBQ2xELFFBQUkyQixVQUFVLENBQUNELFFBQUQsR0FBWTNCLElBQUlHLElBQUosQ0FBU0MsSUFBckIsR0FBNEIsUUFBMUM7O0FBRUEsMkJBQVEsd0JBQXdCd0IsT0FBaEMsRUFBeUMsVUFBU1osR0FBVCxFQUFjQyxHQUFkLEVBQW1CZCxJQUFuQixFQUF5QjtBQUM5RFQsWUFBSSxrQkFBUXdCLElBQVIsQ0FBYWYsSUFBYixDQUFKO0FBQ0EsWUFBSWdCLFlBQVl6QixFQUFFLGlCQUFGLEVBQXFCMEIsUUFBckIsR0FBZ0NDLEtBQWhDLEVBQWhCO0FBQ0EsWUFBSUMsZUFBZUgsVUFBVUksSUFBVixDQUFlLGFBQWYsRUFBOEJDLElBQTlCLEVBQW5COztBQUVBLFlBQUdHLFFBQUgsRUFBYUwsZUFBZSxvRkFBb0ZBLFlBQW5HOztBQUVickIscUJBQWF3QixJQUFiLENBQWtCLHdCQUF3QkgsWUFBeEIsR0FBdUMsdUJBQXpEO0FBQ0gsS0FSRDtBQVNILENBWkQ7O0FBY0EsSUFBSU8sV0FBV2xDLElBQUltQyxNQUFKLENBQVdDLFFBQVFDLEdBQVIsQ0FBWUMsSUFBdkIsRUFBNkIsWUFBWTtBQUN0RDVCLFlBQVFDLEdBQVIsQ0FBWSxtQ0FBbUN1QixTQUFTSyxPQUFULEdBQW1CQyxJQUFsRTtBQUNELENBRmMsQ0FBZiIsImZpbGUiOiJzZXJ2ZXIuanMiLCJzb3VyY2VSb290IjoiL2FwcCIsInNvdXJjZXNDb250ZW50IjpbInZhciAkO1xuXG5pbXBvcnQgZXhwcmVzcyBmcm9tICdleHByZXNzJztcbmltcG9ydCBib2R5UGFyc2VyIGZyb20gJ2JvZHktcGFyc2VyJztcbmltcG9ydCBjaGVlcmlvIGZyb20gJ2NoZWVyaW8nO1xuaW1wb3J0IHJlcXVlc3QgZnJvbSAncmVxdWVzdCc7XG52YXIgYXBwID0gZXhwcmVzcygpO1xuXG5hcHAudXNlKGJvZHlQYXJzZXIudXJsZW5jb2RlZCh7ZXh0ZW5kZWQ6IGZhbHNlfSkpO1xuXG5hcHAucG9zdCgnL3NtcycsIGZ1bmN0aW9uKHJlcSwgcmVzcG9uc2VUZXh0KSB7ICBcbiAgdmFyIHRleHRDb250ZW50ID0gcmVxLmJvZHkuQm9keTtcbiAgY29uc29sZS5sb2cocmVxLmJvZHkpO1xuICBcbiAgdmFyIGhhc0NvbnRlbnQgPSB0ZXh0Q29udGVudCAhPSB1bmRlZmluZWQgJiYgdGV4dENvbnRlbnQubGVuZ3RoID4gMDtcbiAgdmFyIHR3ZWV0UmVxdWVzdGVkID0gaGFzQ29udGVudCAmJiB0ZXh0Q29udGVudFswXSA9PSAnQCc7XG4gIHZhciBzdGFydFBsYXlpbmcgPSBoYXNDb250ZW50ICYmIHRleHRDb250ZW50Lmxlbmd0aCA+IDIgJiYgdGV4dENvbnRlbnQgPT0gJ3duZCc7XG4gIHZhciBrZWVwUGxheWluZyA9IGhhc0NvbnRlbnQgJiYgdGV4dENvbnRlbnQubGVuZ3RoID4gMiAmJiB0ZXh0Q29udGVudC5zdWJzdHJpbmcoMCw0KSA9PSAnd25kXyc7XG4gIFxuICB2YXIgZnJvbVBob25lID0gcmVxLmJvZHkuRnJvbTtcbiAgXG4gIGlmICh0d2VldFJlcXVlc3RlZCl7XG4gICAgcmVxdWVzdCgnaHR0cDovL3R3aXR0ZXIuY29tLycgKyByZXEuYm9keS5Cb2R5LCBmdW5jdGlvbihlcnIsIHJlcywgYm9keSkge1xuICAgICAgICAkID0gY2hlZXJpby5sb2FkKGJvZHkpO1xuICAgICAgICB2YXIgZmlyc3RJdGVtID0gJCgnb2wuc3RyZWFtLWl0ZW1zJykuY2hpbGRyZW4oKS5maXJzdCgpO1xuICAgICAgICB2YXIgdHdlZXRDb250ZW50ID0gZmlyc3RJdGVtLmZpbmQoJy50d2VldC10ZXh0JykudGV4dCgpO1xuICAgICAgICByZXNwb25zZVRleHQuc2VuZCgnPFJlc3BvbnNlPjxNZXNzYWdlPicgKyB0d2VldENvbnRlbnQgKyAnPC9NZXNzYWdlPjwvUmVzcG9uc2U+Jyk7XG4gICAgfSk7XG4gIH0gZWxzZSBpZiAoc3RhcnRQbGF5aW5nIHx8IGtlZXBQbGF5aW5nKXtcbiAgICAgcGxheUdhbWUoc3RhcnRQbGF5aW5nLCByZXEsIHJlc3BvbnNlVGV4dCk7XG4gIH0gZWxzZSB7XG4gICAgcmVzcG9uc2VUZXh0LnNlbmQoJzxSZXNwb25zZT48TWVzc2FnZT4nICsgdGV4dENvbnRlbnQgKyAnPC9NZXNzYWdlPjwvUmVzcG9uc2U+Jyk7ICAgIFxuICB9XG59KTtcblxudmFyIHBsYXlHYW1lID0gZnVuY3Rpb24gKHN0YXJ0aW5nLCByZXEsIHJlc3BvbnNlVGV4dCkgeyAgICBcbiAgICB2YXIgY29tbWFuZCA9ICFzdGFydGluZyA/IHJlcS5ib2R5LkJvZHkgOiAnd25kX2dvJztcbiBcbiAgICByZXF1ZXN0KCdodHRwOi8vdHdpdHRlci5jb20vJyArIGNvbW1hbmQsIGZ1bmN0aW9uKGVyciwgcmVzLCBib2R5KSB7XG4gICAgICAgICQgPSBjaGVlcmlvLmxvYWQoYm9keSk7XG4gICAgICAgIHZhciBmaXJzdEl0ZW0gPSAkKCdvbC5zdHJlYW0taXRlbXMnKS5jaGlsZHJlbigpLmZpcnN0KCk7XG4gICAgICAgIHZhciB0d2VldENvbnRlbnQgPSBmaXJzdEl0ZW0uZmluZCgnLnR3ZWV0LXRleHQnKS50ZXh0KCk7XG4gICAgXG4gICAgICAgIGlmKHN0YXJ0aW5nKSB0d2VldENvbnRlbnQgPSAnV2VsY29tZSB0byB0aGUgYWR2ZW50dXJlLiBSZXNwb25kIHdpdGggXCJ3bmRfcnVuXCIgb3IgXCJ3bmRfaGlkZVwiIHRvIGNvbnRpbnVlIFxcblxcbicgKyB0d2VldENvbnRlbnQ7XG4gICAgXG4gICAgICAgIHJlc3BvbnNlVGV4dC5zZW5kKCc8UmVzcG9uc2U+PE1lc3NhZ2U+JyArIHR3ZWV0Q29udGVudCArICc8L01lc3NhZ2U+PC9SZXNwb25zZT4nKTtcbiAgICB9KTtcbn07XG5cbnZhciBsaXN0ZW5lciA9IGFwcC5saXN0ZW4ocHJvY2Vzcy5lbnYuUE9SVCwgZnVuY3Rpb24gKCkge1xuICBjb25zb2xlLmxvZygnWW91ciBhcHAgaXMgbGlzdGVuaW5nIG9uIHBvcnQgJyArIGxpc3RlbmVyLmFkZHJlc3MoKS5wb3J0KTtcbn0pO1xuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "server.js"
+      ],
+      "names": [
+        "$",
+        "app",
+        "use",
+        "urlencoded",
+        "extended",
+        "post",
+        "req",
+        "responseText",
+        "textContent",
+        "body",
+        "Body",
+        "console",
+        "log",
+        "hasContent",
+        "undefined",
+        "length",
+        "tweetRequested",
+        "startPlaying",
+        "keepPlaying",
+        "substring",
+        "fromPhone",
+        "From",
+        "err",
+        "res",
+        "load",
+        "firstItem",
+        "children",
+        "first",
+        "tweetContent",
+        "find",
+        "text",
+        "send",
+        "playGame",
+        "starting",
+        "command",
+        "listener",
+        "listen",
+        "process",
+        "env",
+        "PORT",
+        "address",
+        "port"
+      ],
+      "mappings": ";;AAEA;;;;AACA;;;;AACA;;;;AACA;;;;;;AALA,IAAIA,CAAJ;;AAMA,IAAIC,MAAM,wBAAV;;AAEAA,IAAIC,GAAJ,CAAQ,qBAAWC,UAAX,CAAsB,EAACC,UAAU,KAAX,EAAtB,CAAR;;AAEAH,IAAII,IAAJ,CAAS,MAAT,EAAiB,UAASC,GAAT,EAAcC,YAAd,EAA4B;AAC3C,QAAIC,cAAcF,IAAIG,IAAJ,CAASC,IAA3B;AACAC,YAAQC,GAAR,CAAYN,IAAIG,IAAhB;;AAEA,QAAII,aAAaL,eAAeM,SAAf,IAA4BN,YAAYO,MAAZ,GAAqB,CAAlE;AACA,QAAIC,iBAAiBH,cAAcL,YAAY,CAAZ,KAAkB,GAArD;AACA,QAAIS,eAAeJ,cAAcL,YAAYO,MAAZ,GAAqB,CAAnC,IAAwCP,eAAe,KAA1E;AACA,QAAIU,cAAcL,cAAcL,YAAYO,MAAZ,GAAqB,CAAnC,IAAwCP,YAAYW,SAAZ,CAAsB,CAAtB,EAAwB,CAAxB,KAA8B,MAAxF;;AAEA,QAAIC,YAAYd,IAAIG,IAAJ,CAASY,IAAzB;;AAEA,QAAIL,cAAJ,EAAmB;AACjB,+BAAQ,wBAAwBV,IAAIG,IAAJ,CAASC,IAAzC,EAA+C,UAASY,GAAT,EAAcC,GAAd,EAAmBd,IAAnB,EAAyB;AACpET,gBAAI,kBAAQwB,IAAR,CAAaf,IAAb,CAAJ;AACA,gBAAIgB,YAAYzB,EAAE,iBAAF,EAAqB0B,QAArB,GAAgCC,KAAhC,EAAhB;AACA,gBAAIC,eAAeH,UAAUI,IAAV,CAAe,aAAf,EAA8BC,IAA9B,EAAnB;AACAvB,yBAAawB,IAAb,CAAkB,wBAAwBH,YAAxB,GAAuC,uBAAzD;AACH,SALD;AAMD,KAPD,MAOO,IAAIX,gBAAgBC,WAApB,EAAgC;AACpCc,iBAASf,YAAT,EAAuBX,GAAvB,EAA4BC,YAA5B;AACF,KAFM,MAEA;AACLA,qBAAawB,IAAb,CAAkB,wBAAwBvB,WAAxB,GAAsC,uBAAxD;AACD;AACF,CAvBD;;AAyBA,IAAIwB,WAAW,SAAXA,QAAW,CAAUC,QAAV,EAAoB3B,GAApB,EAAyBC,YAAzB,EAAuC;AAClD,QAAI2B,UAAU,CAACD,QAAD,GAAY3B,IAAIG,IAAJ,CAASC,IAArB,GAA4B,QAA1C;;AAEA,2BAAQ,wBAAwBwB,OAAhC,EAAyC,UAASZ,GAAT,EAAcC,GAAd,EAAmBd,IAAnB,EAAyB;AAC9DT,YAAI,kBAAQwB,IAAR,CAAaf,IAAb,CAAJ;AACA,YAAIgB,YAAYzB,EAAE,iBAAF,EAAqB0B,QAArB,GAAgCC,KAAhC,EAAhB;AACA,YAAIC,eAAeH,UAAUI,IAAV,CAAe,aAAf,EAA8BC,IAA9B,EAAnB;;AAEA,YAAGG,QAAH,EAAaL,eAAe,oFAAoFA,YAAnG;;AAEbrB,qBAAawB,IAAb,CAAkB,wBAAwBH,YAAxB,GAAuC,uBAAzD;AACH,KARD;AASH,CAZD;;AAcA,IAAIO,WAAWlC,IAAImC,MAAJ,CAAWC,QAAQC,GAAR,CAAYC,IAAvB,EAA6B,YAAY;AACtD5B,YAAQC,GAAR,CAAY,mCAAmCuB,SAASK,OAAT,GAAmBC,IAAlE;AACD,CAFc,CAAf",
+      "file": "server.js",
+      "sourceRoot": "/app",
+      "sourcesContent": [
+        "var $;\n\nimport express from 'express';\nimport bodyParser from 'body-parser';\nimport cheerio from 'cheerio';\nimport request from 'request';\nvar app = express();\n\napp.use(bodyParser.urlencoded({extended: false}));\n\napp.post('/sms', function(req, responseText) {  \n  var textContent = req.body.Body;\n  console.log(req.body);\n  \n  var hasContent = textContent != undefined && textContent.length > 0;\n  var tweetRequested = hasContent && textContent[0] == '@';\n  var startPlaying = hasContent && textContent.length > 2 && textContent == 'wnd';\n  var keepPlaying = hasContent && textContent.length > 2 && textContent.substring(0,4) == 'wnd_';\n  \n  var fromPhone = req.body.From;\n  \n  if (tweetRequested){\n    request('http://twitter.com/' + req.body.Body, function(err, res, body) {\n        $ = cheerio.load(body);\n        var firstItem = $('ol.stream-items').children().first();\n        var tweetContent = firstItem.find('.tweet-text').text();\n        responseText.send('<Response><Message>' + tweetContent + '</Message></Response>');\n    });\n  } else if (startPlaying || keepPlaying){\n     playGame(startPlaying, req, responseText);\n  } else {\n    responseText.send('<Response><Message>' + textContent + '</Message></Response>');    \n  }\n});\n\nvar playGame = function (starting, req, responseText) {    \n    var command = !starting ? req.body.Body : 'wnd_go';\n \n    request('http://twitter.com/' + command, function(err, res, body) {\n        $ = cheerio.load(body);\n        var firstItem = $('ol.stream-items').children().first();\n        var tweetContent = firstItem.find('.tweet-text').text();\n    \n        if(starting) tweetContent = 'Welcome to the adventure. Respond with \"wnd_run\" or \"wnd_hide\" to continue \\n\\n' + tweetContent;\n    \n        responseText.send('<Response><Message>' + tweetContent + '</Message></Response>');\n    });\n};\n\nvar listener = app.listen(process.env.PORT, function () {\n  console.log('Your app is listening on port ' + listener.address().port);\n});\n"
+      ]
+    },
+    "mtime": 1496906237188
+  }
+}
